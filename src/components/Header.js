@@ -8,14 +8,17 @@ const Header = props => {
         <img src={props.car.image} alt={props.car.name} />
       </figure>
       <h2>{props.car.name}</h2>
-      <p>Amount: ${props.car.price}</p>
+      <p>Base Amount: {props.car.price}</p>
+      <p>Extras: {props.additionalPrice}</p>
+      <p>Total: {props.additionalPrice + props.car.price}</p>
     </>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    car: state.car
+    car: state.car,
+    additionalPrice: state.additionalPrice
   };
 };
 
